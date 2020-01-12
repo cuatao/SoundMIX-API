@@ -15,7 +15,8 @@ class Singer extends Model
         'name', 'age', 'description', 'thumbnail',
     ];
 
-    public function song(){
-        return $this->belongsToMany(Song::class, 'song_singers');
+    public function songs()
+    {
+        return $this->belongsToMany(Song::class, 'song_singer');
     }
 }

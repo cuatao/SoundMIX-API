@@ -12,6 +12,10 @@ class SingerTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Singer::class, 50)->create();
+//        factory(Singer::class, 50)->create();
+
+        factory(Singer::class, 10)->create()->each(function ($user) {
+            $user->songs()->saveMany(factory(\App\Model\Song::class, 10)->make());
+        });
     }
 }

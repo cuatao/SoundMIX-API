@@ -13,10 +13,10 @@ class CreateSongSingersTable extends Migration
      */
     public function up()
     {
-        Schema::create('song_singers', function (Blueprint $table) {
+        Schema::create('song_singer', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('song_id')->nullable()->unsigned();
-            $table->integer('singer_id')->nullable()->unsigned();
+            $table->unsignedBigInteger('song_id')->nullable()->unsigned();
+            $table->unsignedBigInteger('singer_id')->nullable()->unsigned();
 
         });
         Schema::table('song_singer', function ($table) {

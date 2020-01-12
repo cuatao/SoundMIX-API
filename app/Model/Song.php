@@ -15,8 +15,8 @@ class Song extends Model
         'title', 'length', 'lyric', 'listenCount', 'downloaded'
     ];
 
-    public function singer()
+    public function singers()
     {
-        return $this->belongsToMany(Singer::class, 'song_singers');
+        return $this->belongsToMany(Singer::class, 'song_singer');
     }
 }
